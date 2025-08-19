@@ -1,6 +1,7 @@
 /**
  * @name DraggableEllen
  * @description Make Ellen Joe chibi draggable inside Discord, remembers position
+ * @author sailentcoder
  */
 module.exports = class DraggableEllen {
     start() {
@@ -55,3 +56,4 @@ module.exports = class DraggableEllen {
         if (pet) pet.remove();
     }
 };
+
