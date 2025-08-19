@@ -1,7 +1,8 @@
 /**
  * @name Zenless Glow (Cyberpunk Edition)
  * @description Dark neon theme with glowing UI
- */
+ * @author sailentcoder
+*/
 
 /* --- Core Variables --- */
 :root, body, .theme-dark, .theme-light {
@@ -114,3 +115,4 @@ h1, h2, h3, .title-29uC1r {
 #ellen-pet:active {
   cursor: grabbing !important;
 }
+
