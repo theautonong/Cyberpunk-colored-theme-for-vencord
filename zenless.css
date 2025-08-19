@@ -1,6 +1,6 @@
 /* =========================
-   Cyberpunk Themed
-    Made by sailentcoder
+   Ultimate Cyberpunk Glitch Theme
+   Made by sailentcoder + enhancements
    ========================= */
 
 /* VARIABLES */
@@ -47,6 +47,19 @@ body {
     background-size: 600% 600%;
     animation: gradientShift var(--gradient-speed) ease infinite;
     transition: background 1s ease;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* NEON HEADINGS */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color);
+    text-shadow:
+        0 0 5px var(--primary-color),
+        0 0 10px var(--primary-color),
+        0 0 20px var(--accent-color),
+        0 0 40px var(--secondary-color);
+    animation: pulseGlow 2s infinite;
 }
 
 /* KEYFRAME ANIMATIONS */
@@ -62,12 +75,8 @@ body {
 }
 
 @keyframes flicker {
-    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-        opacity: 1;
-    }
-    20%, 22%, 24%, 55% {
-        opacity: 0.4;
-    }
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+    20%, 22%, 24%, 55% { opacity: 0.4; }
 }
 
 @keyframes glitchX {
@@ -88,13 +97,8 @@ body {
     100% { transform: translateY(0); }
 }
 
-@keyframes slideIn {
-    to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes slideOut {
-    to { opacity: 0; transform: translateX(100%); }
-}
+@keyframes slideIn { to { opacity: 1; transform: translateX(0); } }
+@keyframes slideOut { to { opacity: 0; transform: translateX(100%); } }
 
 /* BUTTONS & INTERACTIVE ELEMENTS */
 .button, .btn {
@@ -107,6 +111,8 @@ body {
     text-shadow: 0 0 var(--glow-size) var(--glow-color);
     transition: all var(--anim-duration) var(--anim-easing);
     animation: flicker var(--flicker-speed) infinite;
+    border-image-source: linear-gradient(270deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+    border-image-slice: 1;
 }
 
 .button:hover, .btn:hover {
@@ -134,7 +140,7 @@ body {
     animation: glitchY 0.3s infinite alternate;
 }
 
-/* ====== NOTIFICATIONS ====== */
+/* NOTIFICATIONS */
 .notif {
     background-color: var(--notif-bg);
     color: var(--notif-color);
@@ -148,9 +154,7 @@ body {
     animation: slideIn 0.5s forwards, pulseGlow 2s infinite;
 }
 
-.notif.exit {
-    animation: slideOut 0.5s forwards;
-}
+.notif.exit { animation: slideOut 0.5s forwards; }
 
 /* MODALS / POPUPS */
 .modal {
@@ -162,21 +166,15 @@ body {
 }
 
 /* SCROLLBARS */
-::-webkit-scrollbar {
-    width: 12px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--surface-color);
-}
-
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: var(--surface-color); }
 ::-webkit-scrollbar-thumb {
     background: var(--primary-color);
     border-radius: 6px;
     box-shadow: 0 0 10px var(--glow-color);
 }
 
-/* ====== EXTRA EFFECTS ====== */
+/* EXTRA EFFECTS */
 .gradient-border {
     border: 3px solid;
     border-image-slice: 1;
@@ -193,10 +191,8 @@ body {
 /* HUD / Overlay EFFECT */
 .hud {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     pointer-events: none;
     background: repeating-linear-gradient(
         0deg,
@@ -208,3 +204,47 @@ body {
     animation: glitchY 1s infinite alternate;
 }
 
+/* GLITCH TEXT */
+.glitch {
+    position: relative;
+    color: var(--text-color);
+    animation: glitchX 0.3s infinite alternate, glitchY 0.4s infinite alternate;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0; top: 0;
+    color: var(--accent-color);
+    clip: rect(0, 9999px, 0, 0);
+}
+
+.glitch::before { animation: glitchY 0.5s infinite alternate; }
+.glitch::after { animation: glitchX 0.5s infinite alternate-reverse; }
+
+/* FLICKERING LIGHT OVERLAY */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle, rgba(255,0,255,0.05) 0%, transparent 70%);
+    pointer-events: none;
+    animation: flicker 0.2s infinite alternate;
+}
+
+/* CRT / SCANLINES */
+.crt {
+    position: fixed;
+    top:0; left:0;
+    width: 100%; height:100%;
+    pointer-events: none;
+    background-image: repeating-linear-gradient(
+        rgba(255,255,255,0.02) 0px,
+        rgba(255,255,255,0.02) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    mix-blend-mode: overlay;
+}
