@@ -1,0 +1,116 @@
+/**
+ * @name Zenless Glow (Cyberpunk Edition)
+ * @description Dark neon theme with glowing UI
+ */
+
+/* --- Core Variables --- */
+:root, body, .theme-dark, .theme-light {
+  --background-primary: #0e1014 !important;
+  --background-secondary: #1a1f26 !important;
+  --background-tertiary: #242b34 !important;
+  --background-floating: #202530 !important;
+
+  --accent-primary: #4ea1ff !important;     /* Cyan glow */
+  --accent-secondary: #ff75db !important;   /* Magenta pop */
+  --accent-highlight: #ffd966 !important;   /* Yellow */
+
+  --text-normal: #d0d4dc !important;
+  --text-link: var(--accent-primary) !important;
+
+  --interactive-normal: #abb0b8 !important;
+  --interactive-hover: #ffffff !important;
+  --interactive-active: var(--accent-secondary) !important;
+  --interactive-muted: #5a5f6b !important;
+}
+
+/* --- Global Background --- */
+body,
+.appMount,
+.container-2cd8Mz,
+.sidebar-1tnWFu,
+.chatContent-3KubbW {
+  background: var(--background-primary) !important;
+  color: var(--text-normal) !important;
+}
+
+/* --- Messages --- */
+.messageListItem-ZZ7v6g,
+.message-2CShn3 {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-radius: 8px !important;
+  margin: 4px 0 !important;
+  box-shadow: 0 0 6px rgba(78, 161, 255, 0.2) !important;
+  transition: all 0.2s ease-in-out;
+}
+.messageListItem-ZZ7v6g:hover,
+.message-2CShn3:hover {
+  background: rgba(255, 217, 102, 0.1) !important;
+  box-shadow: 0 0 12px rgba(255, 117, 219, 0.5) !important;
+}
+
+/* --- Channels --- */
+.channel-2QD9_O {
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
+}
+.channel-2QD9_O:hover {
+  background: rgba(255, 117, 219, 0.2) !important;
+  box-shadow: 0 0 8px rgba(78, 161, 255, 0.4) !important;
+}
+
+/* --- Links & Mentions --- */
+a,
+.mention,
+.username-hash {
+  color: var(--accent-primary) !important;
+  text-shadow: 0 0 6px rgba(78, 161, 255, 0.7) !important;
+}
+a:hover {
+  color: var(--accent-secondary) !important;
+  text-shadow: 0 0 8px rgba(255, 117, 219, 0.9) !important;
+}
+
+/* --- Buttons --- */
+button:hover {
+  background: var(--accent-highlight) !important;
+  color: #0e1014 !important;
+  box-shadow: 0 0 8px rgba(255, 217, 102, 0.9) !important;
+}
+
+/* --- Headers --- */
+h1, h2, h3, .title-29uC1r {
+  border-bottom: 2px solid var(--accent-secondary) !important;
+  color: var(--accent-primary) !important;
+  text-shadow: 0 0 8px rgba(78, 161, 255, 0.7) !important;
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+  width: 6px !important;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-secondary) !important;
+  border-radius: 3px !important;
+  box-shadow: 0 0 6px rgba(255, 117, 219, 0.8) !important;
+}
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+/* --- Ellen Joe Chibi Pet (container for JS) --- */
+#ellen-pet {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 120px;
+  height: 120px;
+  background: url("https://i.ibb.co/XC8J2cD/ellen-joe-chibi.png") no-repeat center/contain;
+  pointer-events: auto !important;
+  cursor: grab !important;
+  z-index: 99999 !important;
+  filter: drop-shadow(0 0 8px rgba(255, 117, 219, 0.9)) !important;
+}
+#ellen-pet:active {
+  cursor: grabbing !important;
+}
