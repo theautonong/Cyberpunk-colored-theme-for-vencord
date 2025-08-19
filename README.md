@@ -1,1 +1,3 @@
-u gotta mix the JS and CSS so it works like a plugin 
+How to execute
+CSS Theme : Vencord * Settings * Themes * Download zenless.css * Add to themes folder
+JS Ellen Joe : Go to *  C:\Users<YourUsername\AppData\Roaming\Discord\app-<version>\resources\app\. * Download my JS script and add it!
